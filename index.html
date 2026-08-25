@@ -1,0 +1,2374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CraveX Food Order</title>
+<link rel="icon" href="./icon.png">
+<link rel="stylesheet" href="./apply.css">
+</head>     
+
+<body>
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        <svg xmlns="http://www.w3.org/2000/svg" width="27" height="27" fill="currentColor" class="bi bi-fork-knife" viewBox="0 0 16 16">
+  <path d="M13 .5c0-.276-.226-.506-.498-.465-1.703.257-2.94 2.012-3 8.462a.5.5 0 0 0 .498.5c.56.01 1 .13 1 1.003v5.5a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5zM4.25 0a.25.25 0 0 1 .25.25v5.122a.128.128 0 0 0 .256.006l.233-5.14A.25.25 0 0 1 5.24 0h.522a.25.25 0 0 1 .25.238l.233 5.14a.128.128 0 0 0 .256-.006V.25A.25.25 0 0 1 6.75 0h.29a.5.5 0 0 1 .498.458l.423 5.07a1.69 1.69 0 0 1-1.059 1.711l-.053.022a.92.92 0 0 0-.58.884L6.47 15a.971.971 0 1 1-1.942 0l.202-6.855a.92.92 0 0 0-.58-.884l-.053-.022a1.69 1.69 0 0 1-1.059-1.712L3.462.458A.5.5 0 0 1 3.96 0z"/>
+</svg> CraveX
+    </div>
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="#home">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="#menu">
+                Menu
+            </a>
+        </li>
+
+    </ul>
+
+    <div class="nav-actions">
+
+        <!-- COLOR THEME -->
+
+        <div class="theme-wrapper">
+
+            <button
+                class="theme-icon-btn"
+                onclick="toggleThemeMenu()"
+                title="Change Theme">
+
+                <span>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+  <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+</svg>
+                </span>
+
+            </button>
+
+            <div
+                class="theme-menu"
+                id="themeMenu">
+
+                <div class="theme-menu-title">
+
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-palette" viewBox="0 0 16 16">
+  <path d="M8 5a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3m4 3a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3M5.5 7a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0m.5 6a1.5 1.5 0 1 0 0-3 1.5 1.5 0 0 0 0 3"/>
+  <path d="M16 8c0 3.15-1.866 2.585-3.567 2.07C11.42 9.763 10.465 9.473 10 10c-.603.683-.475 1.819-.351 2.92C9.826 14.495 9.996 16 8 16a8 8 0 1 1 8-8m-8 7c.611 0 .654-.171.655-.176.078-.146.124-.464.07-1.119-.014-.168-.037-.37-.061-.591-.052-.464-.112-1.005-.118-1.462-.01-.707.083-1.61.704-2.314.369-.417.845-.578 1.272-.618.404-.038.812.026 1.16.104.343.077.702.186 1.025.284l.028.008c.346.105.658.199.953.266.653.148.904.083.991.024C14.717 9.38 15 9.161 15 8a7 7 0 1 0-7 7"/>
+</svg>
+                    </span>
+
+                    Choose Theme
+
+                </div>
+
+                <div class="theme-grid">
+
+                    <button
+                        class="theme-choice"
+                        onclick="changeTheme('orange')">
+
+                        <span>🟠</span>
+                        Orange
+
+                    </button>
+
+                    <button
+                        class="theme-choice"
+                        onclick="changeTheme('blue')">
+
+                        <span>🔵</span>
+                        Blue
+
+                    </button>
+
+                    <button
+                        class="theme-choice"
+                        onclick="changeTheme('green')">
+
+                        <span>🟢</span>
+                        Green
+
+                    </button>
+
+                    <button
+                        class="theme-choice"
+                        onclick="changeTheme('purple')">
+
+                        <span>🟣</span>
+                        Purple
+
+                    </button>
+
+                    <button
+                        class="theme-choice"
+                        onclick="changeTheme('pink')">
+
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-heart-fill" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314"/>
+</svg></span>
+                        Pink
+
+                    </button>
+
+                    <button
+                        class="theme-choice"
+                        onclick="toggleDark();closeThemeMenu()">
+
+                        <span><svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="currentColor" class="bi bi-moon-fill" viewBox="0 0 16 16">
+  <path d="M6 .278a.77.77 0 0 1 .08.858 7.2 7.2 0 0 0-.878 3.46c0 4.021 3.278 7.277 7.318 7.277q.792-.001 1.533-.16a.79.79 0 0 1 .81.316.73.73 0 0 1-.031.893A8.35 8.35 0 0 1 8.344 16C3.734 16 0 12.286 0 7.71 0 4.266 2.114 1.312 5.124.06A.75.75 0 0 1 6 .278"/>
+</svg></span>
+                        Dark
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- ORDER HISTORY -->
+
+        <button
+            class="icon-btn"
+            onclick="openHistory()"
+            title="Order History">
+
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+</svg>
+
+        </button>
+
+
+        <!-- CART -->
+
+        <button
+            class="icon-btn cart-btn"
+            onclick="openCart()">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-cart-check-fill" viewBox="0 0 16 16">
+  <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0m7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0m-1.646-7.646-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 1 1 .708-.708L8 8.293l2.646-2.647a.5.5 0 0 1 .708.708"/>
+</svg>
+
+            <span
+                class="cart-count"
+                id="cartCount">
+
+                0
+
+            </span>
+
+        </button>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================
+     HERO
+========================= -->
+
+<section
+    class="hero"
+    id="home">
+
+    <div class="hero-content">
+
+        <span class="hero-tag">
+         TODAY'S SPECIAL
+        </span>
+
+        <h1>
+
+            Good Food.
+            <br>
+
+            <span>
+                Good Mood.
+            </span>
+
+        </h1>
+
+        <p>
+
+            Discover delicious food,
+            amazing offers and fast
+            delivery from CraveX.
+
+        </p>
+
+        <button
+            class="primary-btn"
+            onclick="goMenu()">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-arrow-down" viewBox="0 0 16 16">
+  <path fill-rule="evenodd" d="M8 1a.5.5 0 0 1 .5.5v11.793l3.146-3.147a.5.5 0 0 1 .708.708l-4 4a.5.5 0 0 1-.708 0l-4-4a.5.5 0 0 1 .708-.708L7.5 13.293V1.5A.5.5 0 0 1 8 1"/>
+</svg>Explore Menu
+
+        </button>
+
+        <button
+            class="secondary-btn"
+            onclick="openCart()">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-person-lines-fill" viewBox="0 0 16 16">
+  <path d="M6 8a3 3 0 1 0 0-6 3 3 0 0 0 0 6m-5 6s-1 0-1-1 1-4 6-4 6 3 6 4-1 1-1 1zM11 3.5a.5.5 0 0 1 .5-.5h4a.5.5 0 0 1 0 1h-4a.5.5 0 0 1-.5-.5m.5 2.5a.5.5 0 0 0 0 1h4a.5.5 0 0 0 0-1zm2 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1zm0 3a.5.5 0 0 0 0 1h2a.5.5 0 0 0 0-1z"/>
+</svg>My Order
+
+        </button>
+
+    </div>
+
+
+    <div class="hero-image">
+
+        <img
+            src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=90">
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     MENU
+========================= -->
+
+<section id="menu">
+
+    <div class="section-title">
+
+        <small>
+            OUR MENU
+        </small>
+
+        <h2>
+            Delicious Food 🍽️
+        </h2>
+
+        <p>
+            Pick your favourite food
+        </p>
+
+    </div>
+
+
+    <div class="search">
+
+        <input
+            id="search"
+            type="text"
+            placeholder="Search your favourite food..."
+            oninput="displayFoods()">
+
+    </div>
+
+
+    <div class="categories">
+
+        <button
+            class="category active"
+            onclick="filterFood('all',this)">
+
+            All
+
+        </button>
+
+        <button
+            class="category"
+            onclick="filterFood('pizza',this)">
+
+             Pizza
+
+        </button>
+
+        <button
+            class="category"
+            onclick="filterFood('burger',this)">
+
+             Burger
+
+        </button>
+
+        <button
+            class="category"
+            onclick="filterFood('pasta',this)">
+
+             Pasta
+
+        </button>
+
+        <button
+            class="category"
+            onclick="filterFood('dessert',this)">
+
+             Dessert
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="food-grid"
+        id="foodGrid">
+
+    </div>
+
+</section>
+
+
+<!-- =========================
+     FOOD POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="foodPopup">
+
+    <div class="popup-box">
+
+        <button
+            class="close"
+            onclick="closePopup('foodPopup')">
+
+            ✕
+
+        </button>
+
+
+        <div class="popup-food-image">
+
+            <img
+                id="popupImage">
+
+        </div>
+
+
+        <h2 id="popupName"></h2>
+
+
+        <div class="rating">
+            ⭐⭐⭐⭐⭐
+        </div>
+
+
+        <p
+            class="popup-description"
+            id="popupDescription">
+
+        </p>
+
+
+        <div class="popup-price">
+
+            <span
+                class="old"
+                id="popupOld">
+            </span>
+
+            <span
+                class="new"
+                id="popupNew">
+            </span>
+
+        </div>
+
+
+        <div
+            class="popup-offer"
+            id="popupOffer">
+        </div>
+
+
+        <button
+            class="full-btn"
+            onclick="addSelected()">
+
+            Add To My Order
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     CART POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="cartPopup">
+
+    <div class="popup-box">
+
+        <button
+            class="close"
+            onclick="closePopup('cartPopup')">
+
+            ✕
+
+        </button>
+
+
+        <h2>
+             My Order
+        </h2>
+
+
+        <div
+            id="cartItems">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     LOADING POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="loadingPopup">
+
+    <div
+        class="popup-box loading">
+
+        <div class="loading-food">
+            🍔
+        </div>
+
+        <h2>
+            Preparing Your Food...
+        </h2>
+
+        <p>
+            Our kitchen is preparing your order.
+        </p>
+
+        <div class="progress">
+
+            <div
+                id="progressBar">
+            </div>
+
+        </div>
+
+        <b>
+            Please wait...
+        </b>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     DELIVERY POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="deliveryPopup">
+
+    <div
+        class="popup-box delivery-box">
+
+        <button
+            class="close"
+            onclick="closePopup('deliveryPopup')">
+
+            ✕
+
+        </button>
+
+
+        <div class="delivery-icon">
+            🛵
+        </div>
+
+
+        <h2>
+            Delivery Partner Assigned
+        </h2>
+
+
+        <p class="delivery-subtitle">
+            Your delivery partner is ready!
+        </p>
+
+
+        <div class="delivery-boy-card">
+
+            <h3>
+                🛵 Your Delivery Boy
+            </h3>
+
+
+            <div class="delivery-detail">
+
+                👤
+                <strong>
+                    Name:
+                </strong>
+
+                <span
+                    id="deliveryBoyName">
+                </span>
+
+            </div>
+
+
+            <div class="delivery-detail">
+
+                📱
+                <strong>
+                    Mobile:
+                </strong>
+
+                <span
+                    id="deliveryBoyPhone">
+                </span>
+
+            </div>
+
+
+            <div class="delivery-detail">
+
+                ⭐
+                <strong>
+                    Rating:
+                </strong>
+
+                4.9 / 5
+
+            </div>
+
+        </div>
+
+
+        <!-- CUSTOMER FORM -->
+
+        <div class="customer-form">
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label>
+                         Your Name
+                    </label>
+
+                    <input
+                        id="customerName"
+                        type="text"
+                        placeholder="Enter your name">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label>
+                         Mobile Number
+                    </label>
+
+                    <input
+                        id="customerPhone"
+                        type="tel"
+                        maxlength="10"
+                        placeholder="10 digit number">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                     Place / City
+                </label>
+
+                <input
+                    id="customerPlace"
+                    type="text"
+                    placeholder="Enter your city">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                     Full Delivery Address
+                </label>
+
+                <textarea
+                    id="customerAddress"
+                    placeholder="House number, street, area, landmark...">
+                </textarea>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label>
+                     PIN Code
+                </label>
+
+                <input
+                    id="customerPin"
+                    class="pincode"
+                    type="text"
+                    maxlength="6"
+                    inputmode="numeric"
+                    placeholder="6 digit PIN">
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="full-btn"
+            onclick="confirmOrder()">
+
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" class="bi bi-rocket-takeoff" viewBox="0 0 16 16">
+  <path d="M9.752 6.193c.599.6 1.73.437 2.528-.362s.96-1.932.362-2.531c-.599-.6-1.73-.438-2.528.361-.798.8-.96 1.933-.362 2.532"/>
+  <path d="M15.811 3.312c-.363 1.534-1.334 3.626-3.64 6.218l-.24 2.408a2.56 2.56 0 0 1-.732 1.526L8.817 15.85a.51.51 0 0 1-.867-.434l.27-1.899c.04-.28-.013-.593-.131-.956a9 9 0 0 0-.249-.657l-.082-.202c-.815-.197-1.578-.662-2.191-1.277-.614-.615-1.079-1.379-1.275-2.195l-.203-.083a10 10 0 0 0-.655-.248c-.363-.119-.675-.172-.955-.132l-1.896.27A.51.51 0 0 1 .15 7.17l2.382-2.386c.41-.41.947-.67 1.524-.734h.006l2.4-.238C9.005 1.55 11.087.582 12.623.208c.89-.217 1.59-.232 2.08-.188.244.023.435.06.57.093q.1.026.16.045c.184.06.279.13.351.295l.029.073a3.5 3.5 0 0 1 .157.721c.055.485.051 1.178-.159 2.065m-4.828 7.475.04-.04-.107 1.081a1.54 1.54 0 0 1-.44.913l-1.298 1.3.054-.38c.072-.506-.034-.993-.172-1.418a9 9 0 0 0-.164-.45c.738-.065 1.462-.38 2.087-1.006M5.205 5c-.625.626-.94 1.351-1.004 2.09a9 9 0 0 0-.45-.164c-.424-.138-.91-.244-1.416-.172l-.38.054 1.3-1.3c.245-.246.566-.401.91-.44l1.08-.107zm9.406-3.961c-.38-.034-.967-.027-1.746.163-1.558.38-3.917 1.496-6.937 4.521-.62.62-.799 1.34-.687 2.051.107.676.483 1.362 1.048 1.928.564.565 1.25.941 1.924 1.049.71.112 1.429-.067 2.048-.688 3.079-3.083 4.192-5.444 4.556-6.987.183-.771.18-1.345.138-1.713a3 3 0 0 0-.045-.283 3 3 0 0 0-.3-.041Z"/>
+  <path d="M7.009 12.139a7.6 7.6 0 0 1-1.804-1.352A7.6 7.6 0 0 1 3.794 8.86c-1.102.992-1.965 5.054-1.839 5.18.125.126 3.936-.896 5.054-1.902Z"/>
+</svg>Confirm & Place My Order
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     SUCCESS POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="successPopup">
+
+    <div class="popup-box success">
+
+        <div class="success-icon">
+            🎉
+        </div>
+
+        <h2>
+            Order Placed!
+        </h2>
+
+        <p>
+            Your delicious food is on the way!
+        </p>
+
+
+        <div
+            class="final-details"
+            id="finalDetails">
+        </div>
+
+
+        <button
+            class="primary-btn"
+            onclick="closePopup('successPopup')">
+
+             Continue Shopping
+
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     ORDER HISTORY POPUP
+========================= -->
+
+<div
+    class="popup"
+    id="historyPopup">
+
+    <div
+        class="popup-box history-box">
+
+        <button
+            class="close"
+            onclick="closePopup('historyPopup')">
+
+            ✕
+
+        </button>
+
+
+        <h2>
+             My Order History
+        </h2>
+
+
+        <p class="history-subtitle">
+
+            Your previous CraveX orders
+
+        </p>
+
+
+        <div
+            id="historyList">
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer>
+
+    <h2>
+        🍔 CraveX
+    </h2>
+
+    <p>
+        Delicious food. Better mood. 
+    </p>
+
+    <br>
+
+    <small>
+        © 2026 CraveX Food Ordering
+    </small>
+
+</footer>
+
+
+<script>
+
+/* =========================
+   FOOD DATA
+========================= */
+
+const foods = [
+
+{
+    name:"Cheese Burst Pizza",
+    category:"pizza",
+    old:399,
+    price:319,
+    offer:"20% OFF",
+    image:
+    "https://images.unsplash.com/photo-1574071318508-1cdbab80d002?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Extra cheesy pizza with mozzarella, tomato sauce and fresh herbs."
+},
+
+{
+    name:"Pepperoni Pizza",
+    category:"pizza",
+    old:450,
+    price:315,
+    offer:"30% OFF",
+    image:
+    "https://images.unsplash.com/photo-1628840042765-356cda07504e?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Crispy pizza loaded with spicy pepperoni and melted cheese."
+},
+
+{
+    name:"Crispy Chicken Burger",
+    category:"burger",
+    old:320,
+    price:240,
+    offer:"25% OFF",
+    image:
+    "https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Crunchy chicken burger with cheese, lettuce and special sauce."
+},
+
+{
+    name:"Double Cheese Burger",
+    category:"burger",
+    old:400,
+    price:320,
+    offer:"20% OFF",
+    image:
+    "https://images.unsplash.com/photo-1550547660-d9450f859349?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Two juicy patties with double cheese and house sauce."
+},
+
+{
+    name:"Creamy Alfredo Pasta",
+    category:"pasta",
+    old:350,
+    price:298,
+    offer:"15% OFF",
+    image:
+    "https://images.unsplash.com/photo-1473093295043-cdd812d0e601?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Creamy Alfredo pasta with parmesan and Italian herbs."
+},
+
+{
+    name:"Tomato Basil Pasta",
+    category:"pasta",
+    old:280,
+    price:252,
+    offer:"10% OFF",
+    image:
+    "https://images.unsplash.com/photo-1551183053-bf91a1d81141?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Fresh tomato pasta with basil and parmesan cheese."
+},
+
+{
+    name:"Chocolate Cake",
+    category:"dessert",
+    old:250,
+    price:199,
+    offer:"20% OFF",
+    image:
+    "https://images.unsplash.com/photo-1578985545062-69928b1d9587?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Soft chocolate cake with rich chocolate cream."
+},
+
+{
+    name:"Strawberry Dessert",
+    category:"dessert",
+    old:220,
+    price:179,
+    offer:"18% OFF",
+    image:
+    "https://images.unsplash.com/photo-1565958011703-44f9829ba187?auto=format&fit=crop&w=900&q=90",
+    description:
+    "Fresh strawberry dessert with creamy sweet layers."
+}
+
+];
+
+
+/* =========================
+   DELIVERY BOYS
+========================= */
+
+const deliveryBoys = [
+
+{
+    name:"Arun Kumar",
+    phone:"9876543210"
+},
+
+{
+    name:"Vijay Raj",
+    phone:"9123456780"
+},
+
+{
+    name:"Karthik M",
+    phone:"9988776655"
+},
+
+{
+    name:"Surya Prakash",
+    phone:"9090909090"
+},
+
+{
+    name:"Rahul Kumar",
+    phone:"9345678120"
+},
+
+{
+    name:"Ajay Krishna",
+    phone:"9786543210"
+}
+
+];
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let order = [];
+
+let selectedFood = null;
+
+let currentCategory = "all";
+
+let assignedDeliveryBoy = null;
+
+
+/* =========================
+   HISTORY
+========================= */
+
+let orderHistory =
+JSON.parse(
+    localStorage.getItem(
+        "craveXOrderHistory"
+    )
+) || [];
+
+
+/* =========================
+   DISPLAY FOOD
+========================= */
+
+function displayFoods(){
+
+    const grid =
+        document.getElementById(
+            "foodGrid"
+        );
+
+    const search =
+        document.getElementById(
+            "search"
+        ).value.toLowerCase();
+
+
+    const filtered =
+        foods.filter(food => {
+
+            const categoryMatch =
+                currentCategory === "all" ||
+                food.category === currentCategory;
+
+            const searchMatch =
+                food.name
+                .toLowerCase()
+                .includes(search);
+
+            return categoryMatch &&
+                   searchMatch;
+
+        });
+
+
+    grid.innerHTML = "";
+
+
+    filtered.forEach(food => {
+
+        const index =
+            foods.indexOf(food);
+
+
+        grid.innerHTML += `
+
+        <div
+            class="food-card"
+            onclick="openFood(${index})">
+
+            <div class="food-img">
+
+                <span class="offer">
+                    🔥 ${food.offer}
+                </span>
+
+                <img
+                    src="${food.image}"
+                    alt="${food.name}">
+
+            </div>
+
+
+            <div class="food-info">
+
+                <div class="rating">
+                    ⭐⭐⭐⭐⭐
+                </div>
+
+                <h3>
+                    ${food.name}
+                </h3>
+
+                <p>
+                    ${food.description}
+                </p>
+
+
+                <div class="food-bottom">
+
+                    <div class="price">
+
+                        <span class="old-price">
+                            ₹${food.old}
+                        </span>
+
+                        <span class="new-price">
+                            ₹${food.price}
+                        </span>
+
+                    </div>
+
+
+                    <button
+                        class="add-btn"
+                        onclick="
+                        event.stopPropagation();
+                        addFood(${index});
+                        ">
+
+                        +
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================
+   FOOD POPUP
+========================= */
+
+function openFood(index){
+
+    selectedFood =
+        foods[index];
+
+
+    document.getElementById(
+        "popupImage"
+    ).src =
+        selectedFood.image;
+
+
+    document.getElementById(
+        "popupName"
+    ).innerText =
+        selectedFood.name;
+
+
+    document.getElementById(
+        "popupDescription"
+    ).innerText =
+        selectedFood.description;
+
+
+    document.getElementById(
+        "popupOld"
+    ).innerText =
+        "₹" +
+        selectedFood.old;
+
+
+    document.getElementById(
+        "popupNew"
+    ).innerText =
+        "₹" +
+        selectedFood.price;
+
+
+    document.getElementById(
+        "popupOffer"
+    ).innerText =
+        "🔥 Special Offer: " +
+        selectedFood.offer;
+
+
+    document.getElementById(
+        "foodPopup"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+function addSelected(){
+
+    if(selectedFood){
+
+        addToOrder(
+            selectedFood
+        );
+
+        closePopup(
+            "foodPopup"
+        );
+
+        openCart();
+
+    }
+
+}
+
+
+/* =========================
+   ADD FOOD
+========================= */
+
+function addFood(index){
+
+    addToOrder(
+        foods[index]
+    );
+
+}
+
+
+function addToOrder(food){
+
+    const existing =
+        order.find(
+            item =>
+            item.name === food.name
+        );
+
+
+    if(existing){
+
+        existing.quantity++;
+
+    }
+    else{
+
+        order.push({
+
+            ...food,
+
+            quantity:1
+
+        });
+
+    }
+
+
+    updateCartCount();
+
+}
+
+
+/* =========================
+   CART
+========================= */
+
+function updateCartCount(){
+
+    const count =
+        order.reduce(
+            (sum,item) =>
+            sum + item.quantity,
+            0
+        );
+
+
+    document.getElementById(
+        "cartCount"
+    ).innerText =
+        count;
+
+}
+
+
+function openCart(){
+
+    displayCart();
+
+    document.getElementById(
+        "cartPopup"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+function displayCart(){
+
+    const box =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    if(order.length === 0){
+
+        box.innerHTML = `
+
+            <div style="
+            text-align:center;
+            padding:40px;
+            color:var(--muted)">
+
+                <div style="
+                font-size:60px">
+                    🍽️
+                </div>
+
+                <h3>
+                    Your order is empty
+                </h3>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    box.innerHTML = "";
+
+
+    order.forEach(
+        (item,index) => {
+
+        box.innerHTML += `
+
+            <div class="cart-item">
+
+                <img
+                    src="${item.image}">
+
+                <div class="cart-details">
+
+                    <h4>
+                        ${item.name}
+                    </h4>
+
+                    <small>
+                        ${item.offer}
+                    </small>
+
+
+                    <div class="qty">
+
+                        <button
+                            onclick="
+                            changeQty(${index},-1)">
+
+                            −
+
+                        </button>
+
+                        <span>
+                            ${item.quantity}
+                        </span>
+
+                        <button
+                            onclick="
+                            changeQty(${index},1)">
+
+                            +
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+                    <strong
+                        style="
+                        color:var(--primary)">
+
+                        ₹${item.price *
+                        item.quantity}
+
+                    </strong>
+
+                    <br><br>
+
+                    <button
+                        class="remove"
+                        onclick="
+                        removeItem(${index})">
+
+                        🗑️
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    const total =
+        order.reduce(
+            (sum,item) =>
+            sum +
+            item.price *
+            item.quantity,
+            0
+        );
+
+
+    box.innerHTML += `
+
+        <div class="total">
+
+            <span>
+                Total
+            </span>
+
+            <span>
+                ₹${total}
+            </span>
+
+        </div>
+
+
+        <br>
+
+
+        <button
+            class="full-btn"
+            onclick="placeOrder()">
+
+            🚀 Place Order
+
+        </button>
+
+    `;
+
+}
+
+
+function changeQty(index,value){
+
+    order[index].quantity +=
+        value;
+
+
+    if(
+        order[index].quantity <= 0
+    ){
+
+        order.splice(
+            index,
+            1
+        );
+
+    }
+
+
+    updateCartCount();
+
+    displayCart();
+
+}
+
+
+function removeItem(index){
+
+    order.splice(
+        index,
+        1
+    );
+
+    updateCartCount();
+
+    displayCart();
+
+}
+
+
+/* =========================
+   PLACE ORDER
+========================= */
+
+function placeOrder(){
+
+    if(order.length === 0){
+
+        alert(
+            "Please add food to your order."
+        );
+
+        return;
+
+    }
+
+
+    closePopup(
+        "cartPopup"
+    );
+
+
+    document.getElementById(
+        "loadingPopup"
+    ).classList.add(
+        "show"
+    );
+
+
+    const progress =
+        document.getElementById(
+            "progressBar"
+        );
+
+
+    progress.style.width =
+        "0%";
+
+
+    let percent = 0;
+
+
+    const interval =
+        setInterval(() => {
+
+            percent += 2;
+
+            progress.style.width =
+                percent + "%";
+
+
+            if(percent >= 100){
+
+                clearInterval(
+                    interval
+                );
+
+            }
+
+        },100);
+
+
+    setTimeout(() => {
+
+        closePopup(
+            "loadingPopup"
+        );
+
+        showDeliveryBoy();
+
+    },5000);
+
+}
+
+
+/* =========================
+   RANDOM DELIVERY BOY
+========================= */
+
+function showDeliveryBoy(){
+
+    const randomIndex =
+        Math.floor(
+            Math.random() *
+            deliveryBoys.length
+        );
+
+
+    assignedDeliveryBoy =
+        deliveryBoys[randomIndex];
+
+
+    document.getElementById(
+        "deliveryBoyName"
+    ).innerText =
+        assignedDeliveryBoy.name;
+
+
+    document.getElementById(
+        "deliveryBoyPhone"
+    ).innerText =
+        assignedDeliveryBoy.phone;
+
+
+    document.getElementById(
+        "customerName"
+    ).value = "";
+
+
+    document.getElementById(
+        "customerPhone"
+    ).value = "";
+
+
+    document.getElementById(
+        "customerPlace"
+    ).value = "";
+
+
+    document.getElementById(
+        "customerAddress"
+    ).value = "";
+
+
+    document.getElementById(
+        "customerPin"
+    ).value = "";
+
+
+    document.getElementById(
+        "deliveryPopup"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+/* =========================
+   CONFIRM ORDER
+========================= */
+
+function confirmOrder(){
+
+    const name =
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
+
+    const phone =
+        document.getElementById(
+            "customerPhone"
+        ).value.trim();
+
+
+    const place =
+        document.getElementById(
+            "customerPlace"
+        ).value.trim();
+
+
+    const address =
+        document.getElementById(
+            "customerAddress"
+        ).value.trim();
+
+
+    const pin =
+        document.getElementById(
+            "customerPin"
+        ).value.trim();
+
+
+    if(name === ""){
+
+        alert(
+            "Please enter your name."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !/^[0-9]{10}$/.test(phone)
+    ){
+
+        alert(
+            "Please enter a valid 10 digit mobile number."
+        );
+
+        return;
+
+    }
+
+
+    if(place === ""){
+
+        alert(
+            "Please enter your place / city."
+        );
+
+        return;
+
+    }
+
+
+    if(address.length < 10){
+
+        alert(
+            "Please enter your complete delivery address."
+        );
+
+        return;
+
+    }
+
+
+    if(
+        !/^[0-9]{6}$/.test(pin)
+    ){
+
+        alert(
+            "Please enter a valid 6 digit PIN code."
+        );
+
+        return;
+
+    }
+
+
+    const total =
+        order.reduce(
+            (sum,item) =>
+            sum +
+            item.price *
+            item.quantity,
+            0
+        );
+
+
+    const orderId =
+        "CRX" +
+        Date.now()
+        .toString()
+        .slice(-6);
+
+
+    const orderDate =
+        new Date().toLocaleString(
+            "en-IN"
+        );
+
+
+    const completedOrder = {
+
+        id:orderId,
+
+        date:orderDate,
+
+        customer:{
+
+            name:name,
+
+            phone:phone,
+
+            place:place,
+
+            address:address,
+
+            pin:pin
+
+        },
+
+        deliveryBoy:{
+
+            name:
+            assignedDeliveryBoy.name,
+
+            phone:
+            assignedDeliveryBoy.phone
+
+        },
+
+        items:
+            JSON.parse(
+                JSON.stringify(order)
+            ),
+
+        total:total,
+
+        status:
+            "Order Confirmed"
+
+    };
+
+
+    orderHistory.unshift(
+        completedOrder
+    );
+
+
+    localStorage.setItem(
+        "craveXOrderHistory",
+
+        JSON.stringify(
+            orderHistory
+        )
+    );
+
+
+    closePopup(
+        "deliveryPopup"
+    );
+
+
+    document.getElementById(
+        "finalDetails"
+    ).innerHTML = `
+
+        <div>
+            🧾
+            <strong>
+                Order ID:
+            </strong>
+
+            ${orderId}
+        </div>
+
+
+        <div>
+            👤
+            <strong>
+                Customer:
+            </strong>
+
+            ${name}
+        </div>
+
+
+        <div>
+            📞
+            <strong>
+                Mobile:
+            </strong>
+
+            ${phone}
+        </div>
+
+
+        <div>
+            📍
+            <strong>
+                Place:
+            </strong>
+
+            ${place}
+        </div>
+
+
+        <div>
+            🏠
+            <strong>
+                Address:
+            </strong>
+
+            ${address}
+        </div>
+
+
+        <div>
+            📮
+            <strong>
+                PIN:
+            </strong>
+
+            ${pin}
+        </div>
+
+
+        <hr style="
+        margin:12px 0;
+        border:0;
+        border-top:1px solid #aaa;
+        ">
+
+
+        <div>
+            🛵
+            <strong>
+                Delivery Boy:
+            </strong>
+
+            ${assignedDeliveryBoy.name}
+        </div>
+
+
+        <div>
+            📱
+            <strong>
+                Delivery Mobile:
+            </strong>
+
+            ${assignedDeliveryBoy.phone}
+        </div>
+
+
+        <div>
+            💰
+            <strong>
+                Total:
+            </strong>
+
+            ₹${total}
+        </div>
+
+
+        <div>
+            📦
+            <strong>
+                Status:
+            </strong>
+
+            <span style="
+            color:#16a34a">
+
+                Order Confirmed
+
+            </span>
+
+        </div>
+
+    `;
+
+
+    document.getElementById(
+        "successPopup"
+    ).classList.add(
+        "show"
+    );
+
+
+    order = [];
+
+    updateCartCount();
+
+}
+
+
+/* =========================
+   ORDER HISTORY
+========================= */
+
+function openHistory(){
+
+    displayHistory();
+
+    document.getElementById(
+        "historyPopup"
+    ).classList.add(
+        "show"
+    );
+
+}
+
+
+function displayHistory(){
+
+    const historyList =
+        document.getElementById(
+            "historyList"
+        );
+
+
+    if(orderHistory.length === 0){
+
+        historyList.innerHTML = `
+
+            <div class="empty-history">
+
+                <div class="history-icon">
+                    📜
+                </div>
+
+                <h3>
+                    No Orders Yet
+                </h3>
+
+                <p>
+                    Order your favourite food
+                    and your order history
+                    will appear here.
+                </p>
+
+            </div>
+
+        `;
+
+        return;
+
+    }
+
+
+    historyList.innerHTML = "";
+
+
+    orderHistory.forEach(
+        history => {
+
+        let itemsHTML = "";
+
+
+        history.items.forEach(
+            item => {
+
+            itemsHTML += `
+
+                <div class="history-item">
+
+                    <img
+                        class="history-item-image"
+                        src="${item.image}"
+                        alt="${item.name}">
+
+
+                    <div
+                        class="history-item-info">
+
+                        <h4>
+                            ${item.name}
+                        </h4>
+
+                        <small>
+                            ${item.quantity}
+                            ×
+                            ₹${item.price}
+                        </small>
+
+                    </div>
+
+
+                    <div
+                        class="history-item-price">
+
+                        ₹${item.price *
+                        item.quantity}
+
+                    </div>
+
+                </div>
+
+            `;
+
+        });
+
+
+        historyList.innerHTML += `
+
+            <div class="history-card">
+
+
+                <!-- HEADER -->
+
+                <div class="history-header">
+
+                    <div>
+
+                        <div class="order-id">
+
+                            🧾
+                            ${history.id}
+
+                        </div>
+
+                        <div class="order-date">
+
+                            🕐
+                            ${history.date}
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="order-status">
+
+                        ✓
+                        ${history.status}
+
+                    </div>
+
+                </div>
+
+
+                <!-- FOOD -->
+
+                <div class="history-items">
+
+                    ${itemsHTML}
+
+                </div>
+
+
+                <!-- DETAILS -->
+
+                <div class="history-details">
+
+
+                    <div
+                        class="history-detail-box">
+
+                        <div
+                            class="history-detail-title">
+
+                            👤 Customer
+
+                        </div>
+
+                        <div
+                            class="history-detail-value">
+
+                            ${history.customer.name}
+
+                            <br>
+
+                            📞
+                            ${history.customer.phone}
+
+                            <br>
+
+                            📍
+                            ${history.customer.place}
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="history-detail-box">
+
+                        <div
+                            class="history-detail-title">
+
+                            🛵 Delivery Partner
+
+                        </div>
+
+                        <div
+                            class="history-detail-value">
+
+                            ${history.deliveryBoy.name}
+
+                            <br>
+
+                            📱
+                            ${history.deliveryBoy.phone}
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="history-detail-box">
+
+                        <div
+                            class="history-detail-title">
+
+                            🏠 Delivery Address
+
+                        </div>
+
+                        <div
+                            class="history-detail-value">
+
+                            ${history.customer.address}
+
+                            <br>
+
+                            📮 PIN:
+                            ${history.customer.pin}
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="history-detail-box">
+
+                        <div
+                            class="history-detail-title">
+
+                            📦 Order Status
+
+                        </div>
+
+                        <div
+                            class="history-detail-value">
+
+                            ✅
+                            Order Confirmed
+
+                            <br>
+
+                            🚚
+                            Delivery Assigned
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- TOTAL -->
+
+                <div class="history-total">
+
+                    <span
+                        class="history-total-label">
+
+                        💰 Total Amount
+
+                    </span>
+
+
+                    <span
+                        class="history-total-price">
+
+                        ₹${history.total}
+
+                    </span>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+}
+
+
+/* =========================
+   CATEGORY FILTER
+========================= */
+
+function filterFood(
+    category,
+    button
+){
+
+    currentCategory =
+        category;
+
+
+    document
+        .querySelectorAll(
+            ".category"
+        )
+        .forEach(btn => {
+
+            btn.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    button.classList.add(
+        "active"
+    );
+
+
+    displayFoods();
+
+}
+
+
+/* =========================
+   THEME
+========================= */
+
+function toggleThemeMenu(){
+
+    document.getElementById(
+        "themeMenu"
+    ).classList.toggle(
+        "show"
+    );
+
+}
+
+
+function closeThemeMenu(){
+
+    document.getElementById(
+        "themeMenu"
+    ).classList.remove(
+        "show"
+    );
+
+}
+
+
+function changeTheme(theme){
+
+    document.body.classList.remove(
+        "blue",
+        "green",
+        "purple",
+        "pink",
+        "dark"
+    );
+
+
+    if(theme !== "orange"){
+
+        document.body.classList.add(
+            theme
+        );
+
+    }
+
+
+    localStorage.setItem(
+        "craveXTheme",
+        theme
+    );
+
+
+    closeThemeMenu();
+
+}
+
+
+/* =========================
+   DARK MODE
+========================= */
+
+function toggleDark(){
+
+    document.body.classList.toggle(
+        "dark"
+    );
+
+
+    if(
+        document.body.classList.contains(
+            "dark"
+        )
+    ){
+
+        localStorage.setItem(
+            "craveXTheme",
+            "dark"
+        );
+
+    }
+
+}
+
+
+/* LOAD SAVED THEME */
+
+const savedTheme =
+    localStorage.getItem(
+        "craveXTheme"
+    );
+
+
+if(savedTheme){
+
+    changeTheme(
+        savedTheme
+    );
+
+}
+
+
+/* =========================
+   CLOSE POPUP
+========================= */
+
+function closePopup(id){
+
+    document.getElementById(id)
+        .classList.remove(
+            "show"
+        );
+
+}
+
+
+/* =========================
+   GO MENU
+========================= */
+
+function goMenu(){
+
+    document.getElementById(
+        "menu"
+    ).scrollIntoView({
+        behavior:"smooth"
+    });
+
+}
+
+
+/* =========================
+   OUTSIDE CLICK
+========================= */
+
+document
+    .querySelectorAll(".popup")
+    .forEach(popup => {
+
+        popup.addEventListener(
+            "click",
+            function(e){
+
+                if(e.target === popup){
+
+                    popup.classList.remove(
+                        "show"
+                    );
+
+                }
+
+            }
+        );
+
+    });
+
+
+/* =========================
+   START
+========================= */
+
+displayFoods();
+
+updateCartCount();
+
+</script>
+
+</body>
+</html>
+
